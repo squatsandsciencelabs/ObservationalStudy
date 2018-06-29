@@ -1,5 +1,3 @@
-setwd("/home/yulia/Documents/SNS/Study/")
-
 library(tidyverse)
 library(reshape2)
 
@@ -259,49 +257,3 @@ full_data_clean <- full_data_clean[full_data_clean$unknowns == 0,]
 save(full_data_clean, file = "StudyDataClean.RData")
 
 rm(list=ls())
-
-# helper calls
-View(full_data_clean[full_data_clean$Set_exercise == "bench" &
-                       full_data_clean$StudySubject == "elisa" &
-                       full_data_clean$Set_rpe == "8",])
-# sum(is.na(full_data$setID))
-# table(full_data$Rep_removed,full_data$Rep_RepCount)
-# full_data[full_data$Rep_removed == "True" & full_data$Rep_RepCount == 2,][1:10,]
-# full_data[grepl("fail", full_data$Set_tags),]
-# View(full_data[full_data$setID == "6765a48d-ce7b-4072-a520-f839c3ec6fcd",])
-# View(full_data_clean[full_data_clean$StudySubject == "mimi" & full_data_clean$Set_workoutID == "870ca10a-1f71-4cbf-a3f8-6ef0f0cc56c1",])
-# full_data_clean[full_data_clean$Set_exercise == "bench",]
-# with(full_data_clean[full_data_clean$StudySubject == "mimi" & 
-#                        full_data_clean$Set_rpe %in% c("9", "9.5","10"),],
-#      table(Rep_RepCount, Set_exercise))
-# View(full_data_clean[full_data_clean$StudySubject == "harr" & 
-#                        full_data_clean$Set_rpe %in% c("9", "9.5","10"),])
-# View(full_data_clean[full_data_clean$StudySubject == "matt" & 
-#                        full_data_clean$Set_weight < 125 &
-#                        full_data_clean$Set_exercise == "squat",])
-# View(full_data_clean[full_data_clean$Set_workoutID == "ec16e6cb-29c1-4e2b-8235-cbd36efac63b",])
-# View(full_data_clean[full_data_clean$fail == 1,])
-# View(full_data_clean[full_data_clean$Rep_deviceIdentifier == '64FF5A0B-B1FA-4915-981F-AB2C4632419C',])
-# View(full_data_clean[is.na(full_data_clean$Set_weight),])
-# View(full_data_clean[full_data_clean$unknowns == 1 & full_data_clean$StudySubject != "",])
-# table(full_data_clean[full_data_clean$StudySubject == "elisa",]$Set_rpe)
-
-# View(full_data_clean[full_data_clean$StudySubject == "elisa" &
-#                        full_data_clean$Set_exercise == "bench" &
-#                         full_data_clean$Rep_AvgVel > 0.35,])
-# View(full_data_clean[full_data_clean$StudySubject == "elisa",])
-
-# View(full_data_clean[full_data_clean$Set_weight != full_data_clean$Set_weight_adj,])
-# 
-# View(full_data_clean[full_data_clean$StudySubject == "elisa" &
-#                        full_data_clean$Set_workoutID == "870ca10a-1f71-4cbf-a3f8-6ef0f0cc56c1",])
-
-# elisa's workoutIDs
-# unique(full_data_clean[full_data_clean$StudySubject=="elisa",]$Set_workoutID)
-# "069415c7-5299-4dd3-a548-e201d5fa7c81" 2018-05-17
-# "dc7cace1-274d-487c-ba35-7bc957b7097b" 2018-05-08 android
-# "c1d046a3-bf4e-4ba8-a43a-2568a3b21620" 2018-05-15
-# "870ca10a-1f71-4cbf-a3f8-6ef0f0cc56c1" 2018-05-19
-# "0ebb7ef9-06c9-4a3f-aee6-45c16d65e3f5" 2018-05-10
-# "bafb2bf6-d950-4ac8-a254-42f60e9eebe4" 2018-05-12
-# "01aff772-84bf-4a7b-8bb4-17863086714a" 2018-05-08 ios
